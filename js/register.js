@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(async (response) => {
             if (response.ok) {
                 // Registration was successful, redirect to the email verification page
-                window.location.href = `http://localhost:5500/client/email-verification.html?email=${email}`;
+                window.location.href = `https://smartcodeacademy.netlify.app/email-verification.html?email=${email}`;
             } else {
                 // Registration failed, handle the error
                 const errorMessage = await response.text();

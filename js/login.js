@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     title: 'Success!',
                     text: 'Login successful.',
                 }).then(() => {
-                    window.location.href = '/client/index.html'; // Redirect after the user clicks "OK"
+                    window.location.href = '/index.html'; // Redirect after the user clicks "OK"
                 });
             } else {
                 // Show an error notification using SweetAlert2

@@ -36,7 +36,7 @@ upcomingAssignments.forEach(assignment => {
 
     // Generate a URL-friendly assignment name
     const encodedAssignmentName = assignment.assignment_name.replace(/\s+/g, '-').toLowerCase();
-    const assignmentURL = `/client/${encodedAssignmentName}.html`;
+    const assignmentURL = `/${encodedAssignmentName}.html`;
 
     // Set the assignment link properties
     assignmentLink.textContent = `${assignment.assignment_name} Deadline: ${deadlineDate.toLocaleDateString()}`;

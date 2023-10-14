@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const lectureLink = document.createElement('a');
                 lectureLink.textContent = lecture.lecture_name;
                 // lectureLink.href = `/client/assignment1.html`;
-                lectureLink.href = `/client/${lecture.lecture_name.replace(/\s+/g, '-').toLowerCase()}.html`;
+                lectureLink.href = `/${lecture.lecture_name.replace(/\s+/g, '-').toLowerCase()}.html`;
 
 
                 // Check if the lecture is completed and add a badge or styling
