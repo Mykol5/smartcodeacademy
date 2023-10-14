@@ -1,0 +1,17 @@
+student-authentication/
+├── client/                  // Frontend files
+│   ├── index.html
+│   ├── css/
+│   ├── js/
+│   └── ...
+│
+├── server/                  // Backend files
+│   ├── server.js            // Your Express.js server file
+│   ├── routes.js            // API routes
+│   ├── controllers/         // Controllers for handling API logic
+│   ├── models/              // Database models (if using a database)
+│   ├── config/              // Configuration files (e.g., database connection)
+│   └── ...
+│
+├── package.json
+├── ...

@@ -1,0 +1,42 @@
+<!-- <div id="notification"></div> -->
+
+
+<!-- Updated HTML -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="css/register.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <header>
+        <img src="img/smarttech.png" alt="Logo">
+        <h1>User Login</h1>
+    </header>
+    <main>
+ 
+
+        <section id="login-form">
+            <h2>Login</h2>
+            <form id="login-form" method="post">
+                <div class="form-group">
+                    <label for="user-id">User ID:</label>
+                    <input type="text" id="user-id" name="user-id" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+            <p>Don't have a user ID? <a id="request-code-link" href="/register.html">Request one</a></p>
+
+            
+        </section>
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

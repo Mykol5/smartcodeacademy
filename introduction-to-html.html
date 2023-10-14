@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1: Introduction to HTML</title>
+    <link rel="stylesheet" href="css/assignment1.css">
+       <!-- Include CodeMirror CSS via CDN -->
+    <link rel="stylesheet" href="css/codemirror.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/javascript/javascript.min.js"></script> -->
+    
+</head>
+<body>
+    <header>
+        <h1>Assignment 1: Introduction to HTML</h1>
+    </header>
+    <main>
+        <section class="question">
+            <h2>Assignment Question</h2>
+            <p>Write an HTML document that displays a simple webpage with the following content:</p>
+            <ul>
+                <li>A heading with your name</li>
+                <li>A paragraph with a brief introduction</li>
+                <li>An ordered or unordered list</li>
+                <li>An image</li>
+            </ul>
+            <p>Your HTML document should be properly structured using appropriate HTML tags.</p>
+        </section>
+        <section class="ide">
+            <h2>Integrated Development Environment (IDE)</h2>
+            <div class="code-editor">
+                <textarea id="html-code" class="CodeMirror" name="html-code" placeholder="Enter your HTML code here" rows="4" cols="50"></textarea>
+                <textarea id="css-code" class="CodeMirror" name="css-code" placeholder="Enter your CSS code here" rows="4" cols="50"></textarea>
+                <textarea id="js-code" class="CodeMirror" name="js-code" placeholder="Enter your JavaScript code here" rows="4" cols="50"></textarea>                
+            </div>
+            <button id="run-button">Run</button>
+        </section>
+        <section class="result">
+            <h2>Result</h2>
+            <iframe id="result-frame" sandbox="allow-scripts"></iframe>
+        </section>
+
+        <!-- Add the Submit Result button here -->
+        <button id="submit-result-button">Submit Result</button>
+    </main>
+
+        <!-- Include CodeMirror JavaScript via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/codemirror.js"></script>
+    <script src="js/css.js"></script>
+    <script src="js/javascript.js"></script>
+    <script src="js/htmlmixed.js"></script>
+    <script src="js/assignment1.js"></script>
+    <script src="js/html-submit.js"></script>
+
+
+
+    <!-- <script>
+        // Initialize CodeMirror for HTML code
+        var htmlEditor = CodeMirror.fromTextArea(document.getElementById("html-code"), {
+            mode: "htmlmixed",
+            theme: "default",
+            lineNumbers: true
+        });
+    
+        // Initialize CodeMirror for CSS code
+        var cssEditor = CodeMirror.fromTextArea(document.getElementById("css-code"), {
+            mode: "css",
+            theme: "default",
+            lineNumbers: true
+        });
+    
+        // Initialize CodeMirror for JavaScript code
+        var jsEditor = CodeMirror.fromTextArea(document.getElementById("js-code"), {
+            mode: "javascript",
+            theme: "default",
+            lineNumbers: true
+        });
+    </script> -->
+    
+</body>
+</html>

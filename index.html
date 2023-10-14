@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Portal</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Add your additional CSS and JavaScript links here for the dashboard -->
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <span class="assignment-portal">Smart Tech Portal</span>
+            <div class="logo">
+                <img src="img/smarttech.png" alt="Logo">
+                <div class="menu-toggle" id="menuToggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="menu-toggle" id="closeToggle">
+                    <div class="close-bar"></div>
+                    <div class="close-bar"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <br><br><br>
+        <div class="user-greeting">
+            <img src="img/smarttech.png" alt="User Avatar">
+            <p>Welcome, <span id="user-name">John Doe!</span></p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-upload"></i> Submit Assignment</a></li>
+            <li><a href="/update-profile.html"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="#" id="log-out-button"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <ul class="nav-link">
+            <li><a href="/index.html"><i class="fas fa-home"></i></a></li>
+            <li><a href="#"><i class="fas fa-upload"></i></a></li>
+            <li><a href="/update-profile.html"><i class="fas fa-user"></i></a></li>
+            <li><a href="#" id="log-out-button"><i class="fas fa-sign-out-alt"></i></a></li>
+        </ul>
+
+        <br><br><br><br>
+        <section class="content" id="imageGallery">
+            <!-- Initially, display the first image -->
+            <img src="img/WhatsApp Image 2023-10-03 at 9.23.49 AM.jpeg" alt="Image 1">
+        </section>
+        
+
+
+        <!-- <section class="content">
+            <h1>Assignment Submission</h1>
+            <br>
+            <form action="/submit" method="POST">
+                <label for="name">Your Name:</label>
+                <input type="text" name="name" required><br><br>
+                <label for="course">Course Name:</label>
+                <input type="text" name="course" required><br><br>
+                <label for="title">Assignment Title:</label>
+                <input type="text" name="title" required><br><br>
+                <label for="link">Assignment Link:</label>
+                <input type="url" name="link" required><br><br>
+                <input type="submit" value="Submit Assignment">
+            </form>
+        </section> -->
+
+        <!-- User Dashboard Section -->
+        <section class="dashboard">
+            <!-- Add user dashboard content here -->
+            <div class="dashboard-item">
+                <h2>Lectures</h2>
+                <!-- Display a list of assignments here -->
+                <ul id="lecture-list">
+                    <!-- List items will be added dynamically using JavaScript -->
+                </ul>
+                <!-- <ul>
+                    <li><a href="/client/assignment1.html">Introduction to HTML</a></li>
+                    <li><a href="#">Introduction to CSS</a></li>
+                    
+                </ul> -->
+            </div>
+            <div class="dashboard-item">
+                <h2>Upcoming Assignments</h2>
+                <ul id="upcoming-deadlines-list">
+                    <!-- Upcoming deadlines will be displayed here -->
+                </ul>
+            </div>
+            
+            
+            <div class="dashboard-item">
+                <h2>Grades</h2>
+                <ul id="grades-list">
+                    <!-- Grades will be populated here -->
+                </ul>
+            </div>
+            
+
+            <div class="dashboard-item">
+                <h2>Notifications</h2>
+                <!-- Display notifications here -->
+                <ul id="notifications-list">
+                    <!-- Notifications will be populated here -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Feedback Section -->
+        <section class="feedback">
+            <h2>Provide Feedback</h2>
+            <form id="feedback-form">
+                <label for="assignment-feedback">Assignment Feedback:</label>
+                <textarea id="assignment-feedback" name="assignment-feedback" rows="4" cols="50"></textarea>
+                <br><br>
+                <label for="course-feedback">Course Feedback:</label>
+                <textarea id="course-feedback" name="course-feedback" rows="4" cols="50"></textarea>
+                <br><br>
+                <input type="submit" value="Submit Feedback">
+            </form>
+        </section>
+    </main>
+    <script src="js/index.js"></script>
+    <script src="js/lecturefetch.js"></script>
+    <script src="js/assigndeadline.js"></script>
+    <script src="js/grades-list.js"></script>
+    <script src="js/notifications.js"></script>
+
+
+    <script>
+
+                // Create an EventSource for SSE
+        // const eventSource = new EventSource('/sse-profile-updates');
+
+        // Listen for events
+        eventSource.addEventListener('profile-update', (event) => {
+        const updatedUserData = JSON.parse(event.data);
+
+        // Update the UI with the new user data
+        updateUIWithUserData(updatedUserData);
+        });
+
+
+    </script>
+
+    <!-- Add your JavaScript code for the dashboard functionality here -->
+    <script>
+
+                        // Function to update the user's name on the dashboard
+                function updateUserName(newName) {
+                const userNameElement = document.getElementById('user-name');
+                if (userNameElement) {
+                    userNameElement.textContent = newName;
+                }
+                }
+
+                // Function to update the user's profile picture
+                function updateProfilePicture(newImageUrl) {
+                const profilePictureElement = document.getElementById('profile-picture');
+                if (profilePictureElement) {
+                    profilePictureElement.src = newImageUrl;
+                }
+                }
+
+
+
+    </script>
+
+    <script>
+
+                            // Frontend JavaScript
+                const logOutButton = document.getElementById('log-out-button');
+
+                logOutButton.addEventListener('click', async () => {
+                // Clear user authentication data from local storage
+                localStorage.removeItem('authToken');
+                localStorage.removeItem('username');
+                
+                // Redirect the user to the login page
+                window.location.href = '/login.html'; // Replace with your login page URL
+                });
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Portal</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="menu-toggle" id="menuToggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <span>Assignment Portal</span>
+            </div>
+        </nav>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <div class="menu-toggle" id="closeToggle">
+            <div class="close-bar"></div>
+            <div class="close-bar"></div>
+        </div>
+        <br><br>
+        <div class="user-greeting">
+            <img src="user-avatar.png" alt="User Avatar">
+            <p>Welcome, John Doe!</p>
+        </div>
+        <br><br>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Submit Assignment</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </aside>
+    <main>
+        <section class="content">
+            <h1>Assignment Submission</h1>
+            <form action="/submit" method="POST">
+                <label for="name">Your Name:</label>
+                <input type="text" name="name" required><br><br>
+                
+                <label for="course">Course Name:</label>
+                <input type="text" name="course" required><br><br>
+                
+                <label for="title">Assignment Title:</label>
+                <input type="text" name="title" required><br><br>
+                
+                <label for="link">Assignment Link:</label>
+                <input type="url" name="link" required><br><br>
+                
+                <input type="submit" value="Submit Assignment">
+            </form>
+        </section>
+    </main>
+    <script src="js/index.js"></script>
+</body>
+</html>
+
+ -->

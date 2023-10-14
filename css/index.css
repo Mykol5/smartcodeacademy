@@ -1,0 +1,466 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define global styles */
+body {
+    font-family: system-ui, 'Open Sans';
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header and Navbar styles */
+header {
+    background-color: #6fac8d;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100; /* Ensure it's above other content */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.assignment-portal {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 30px;
+    margin-left: 10px;
+    border-radius: 70%;
+}
+
+/* Hamburger menu styles */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 2px 0;
+    transition: 0.4s;
+}
+
+/* Styles for the "X" close button */
+#closeToggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+.close-bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 2px 0;
+    transition: 0.4s;
+    transform-origin: center;
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #343a40;
+    color: #fff;
+    width: 250px;
+    padding: 20px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hide the sidebar by default for smaller screens */
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.user-greeting {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user-greeting img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Style for the "Assignment Submission" section */
+.content {
+    max-width: 900px; /* Set a maximum width for the section */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center; /* Center the content horizontally */
+}
+
+/* Style for form elements */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements horizontally */
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #555; /* Change label text color */
+}
+
+input[type="text"],
+input[type="url"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #6fac8d; /* Change button background color */
+    color: #fff; /* Change button text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #5d956e; /* Change button background color on hover */
+}
+
+
+/* Dashboard Section Styles */
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 30px auto; /* Center the dashboard horizontally */
+    max-width: 80%; /* Set the maximum width to 80% of the parent container */
+}
+
+.dashboard-item {
+    flex: 1;
+    min-width: calc(33.33% - 20px); /* Calculate the width for each item (1/3 of parent width with margins) */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.dashboard-item h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.dashboard-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dashboard-item ul li {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.dashboard-item ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.dashboard-item ul li span {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Styling for the "Completed" badge */
+.completed-badge {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 4px 8px; /* Add padding for spacing */
+    border-radius: 4px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+  }
+  
+  /* Styling for the "Not Completed" badge */
+  .not-completed-badge {
+    background-color: #F44336; /* Red background color */
+    color: white; /* White text color */
+    padding: 4px 8px; /* Add padding for spacing */
+    border-radius: 4px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+  }
+
+  /* CSS for badges */
+.bg-success {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 4px 8px; /* Add padding for spacing */
+    border-radius: 4px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+}
+
+.bg-danger {
+    background-color: #F44336; /* Red background color */
+    color: white; /* White text color */
+    padding: 4px 8px; /* Add padding for spacing */
+    border-radius: 4px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+}
+
+
+#grades-list strong {
+    font-weight: bold;
+  }
+  
+
+  
+
+
+/* CSS styles */
+#upcoming-deadlines-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#upcoming-deadlines-list li {
+    margin-bottom: 10px;
+}
+
+/* Define styles for different text colors */
+#upcoming-deadlines-list li.red {
+    color: red;
+}
+
+#upcoming-deadlines-list li.green {
+    color: green;
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .dashboard-item {
+        min-width: 100%; /* Full width for items on smaller screens */
+        margin-right: 0;
+    }
+}
+
+
+/* Feedback Section Styles */
+.feedback {
+    max-width: 78%;
+    margin: 30px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 30px;
+    padding-right: 0px;
+    margin-left: 10%;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.feedback h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Adjust the textarea width for smaller screens */
+.feedback textarea {
+    width: 75%; /* Set the textarea width to 100% */
+    max-width: 75%; /* Set the maximum width to 100% */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+    .content {
+        max-width: 90%; /* Limit the width of the section on smaller screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    input[type="text"],
+    input[type="url"] {
+        padding: 8px; /* Adjust input padding for smaller screens */
+        font-size: 14px; /* Adjust input font size for smaller screens */
+    }
+
+    input[type="submit"] {
+        font-size: 16px; /* Adjust button font size for smaller screens */
+    }
+}
+
+
+/* Navigation links styles */
+.nav-links {
+    list-style: none; /* Remove list bullets */
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 10px 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.nav-link a {
+    text-decoration: none;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center; /* Center the content in the navbar */
+    }
+
+    .assignment-portal {
+        margin-right: 0; /* Remove right margin for smaller screens */
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1;
+    }
+
+    #sidebar {
+        left: -250px;
+    }
+
+    #sidebar.open {
+        left: 0;
+    }
+
+    /* Show the "X" close button when sidebar is open */
+    #sidebar.open + #closeToggle {
+        display: flex;
+    }
+
+    /* Show the regular text links on smaller screens */
+    .nav-links li {
+        display: block;
+    }
+
+    /* Hide the icons on smaller screens */
+    .nav-links a i {
+        display: none;
+    }
+
+    .nav-link {
+        display: none;
+    }
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    /* Hide the regular text links on larger screens */
+    .content {
+        max-width: 80%; /* Limit the width of the section on smaller screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .bar {
+        display: none;
+    }
+
+    .nav-links li {
+        display: none;
+    }
+
+    /* Show the icons on larger screens */
+    .nav-link i {
+        font-size: 24px; /* Set the font-size for icons */
+        margin-right: 10px; /* Add spacing between icon and text (adjust as needed) */
+        display: inline-block; /* Show icons inline */
+        text-decoration: none; /* Remove text decoration */
+    }
+
+    /* Remove list bullets (dots) from icons on larger screens */
+    .nav-link li {
+        list-style: none;
+    }
+
+    /* Adjust the top position of nav links for larger screens */
+    .nav-link {
+        position: fixed;
+        top: 100px; /* Adjust this value to control the vertical positioning */
+        left: 20px; /* Adjust this value to control the horizontal positioning */
+    }
+
+    .nav-link {
+        display: flex;
+        float: left; 
+        flex-direction: column;
+        margin-left: 8px;
+    }
+
+    .nav-link li {
+        margin-bottom: 35px;
+        font-size: 20px;
+    }
+
+    .nav-link a {
+        text-decoration: none;
+    }
+
+    .nav-link i {
+        color: grey;
+    }
+}

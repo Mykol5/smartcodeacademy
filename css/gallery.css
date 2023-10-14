@@ -1,0 +1,18 @@
+/* Content Section Styles */
+.content {
+    max-width: 78.5%; /* Adjust the max-width as needed */
+    margin: 0 auto; /* Center the content */
+    overflow: hidden; /* Hide overflowing images */
+    position: relative; /* Required for absolute positioning of images */
+    height: 300px; /* Set the height of the gallery container */
+    margin-left: 10%;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.content img {
+    width: 100%; /* Make images fill the container width */
+    height: 100%; /* Make images fill the container height */
+    object-fit: cover; /* Cover the entire container without stretching */
+    position: relative; /* Position images absolutely */
+    transition: opacity 0.5s ease-in-out; /* Add a fade transition effect */
+}
