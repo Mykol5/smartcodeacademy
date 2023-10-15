@@ -3,42 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 1: Introduction to HTML</title>
+    <title>Lecture 1: Introduction to HTML</title>
     <link rel="stylesheet" href="css/assignment1.css">
-       <!-- Include CodeMirror CSS via CDN -->
+    <!-- Include CodeMirror CSS via CDN -->
     <link rel="stylesheet" href="css/codemirror.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/css/css.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/javascript/javascript.min.js"></script> -->
-    
 </head>
 <body>
     <header>
-        <h1>Assignment 1: Introduction to HTML</h1>
+        <h1>Lecture 1: Introduction to HTML</h1>
     </header>
     <main>
-        <section class="question">
-            <h2>Assignment Question</h2>
-            <p>Write an HTML document that displays a simple webpage with the following content:</p>
-            <ul>
-                <li>A heading with your name</li>
-                <li>A paragraph with a brief introduction</li>
-                <li>An ordered or unordered list</li>
-                <li>An image</li>
-            </ul>
-            <p>Your HTML document should be properly structured using appropriate HTML tags.</p>
+        <!-- Video Section -->
+        <section class="video">
+            <h2>Video Lecture</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ucjiQdpp84U?si=llEFfijZVksD40wH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </section>
+
+        <!-- Theoretical Description Section -->
+        <section class="description">
+            <h2>Theoretical Description</h2>
+            <p>HTML (Hypertext Markup Language) is the standard markup language used to create web pages. It provides a structured way to organize content on the web. HTML uses a system of tags to format text, images, links, and other media. Let's explore some essential HTML tags and concepts:</p>
+            
+            <h3>HTML Document Structure</h3>
+            <p>An HTML document consists of the following components:</p>
+            <ul>
+                <li><strong>HTML Tag:</strong> Defines the document type and serves as the root element.</li>
+                <li><strong>Head Section:</strong> Contains meta-information about the document, such as the title, character set, and linked stylesheets.</li>
+                <li><strong>Body Section:</strong> Contains the visible content of the web page.</li>
+            </ul>
+            
+            <h3>Common HTML Tags</h3>
+            <p>HTML tags are used to structure and format content. Here are some common tags:</p>
+            <ul>
+                <li><strong>&lt;h1&gt; to &lt;h6&gt;:</strong> Define headings of varying levels.</li>
+                <li><strong>&lt;p&gt;:</strong> Create paragraphs of text.</li>
+                <li><strong>&lt;a&gt;:</strong> Create hyperlinks to other web pages.</li>
+                <li><strong>&lt;img&gt;:</strong> Embed images into the page.</li>
+                <li><strong>&lt;ul&gt; and &lt;ol&gt;:</strong> Define unordered and ordered lists.</li>
+                <li><strong>&lt;li&gt;:</strong> Define list items.</li>
+            </ul>
+            
+            <h3>Example</h3>
+            <p>Here's an example of a simple HTML document:</p>
+            <pre>
+                <code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;My Web Page&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;h1&gt;Welcome to My Web Page&lt;/h1&gt;
+            &lt;p&gt;This is a sample web page created with HTML.&lt;/p&gt;
+            &lt;a href="https://www.example.com"&gt;Visit Example.com&lt;/a&gt;
+            &lt;img src="image.jpg" alt="An image"&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+                </code>
+            </pre>
+        
+            <h3>Class Assessment</h3>
+            <p>Now, let's assess your knowledge. Use the integrated development environment (IDE) below to create an HTML document that:</p>
+            <ul>
+                <li>Includes a heading with your name.</li>
+                <li>Contains a paragraph introducing yourself.</li>
+                <li>Features an ordered or unordered list of your hobbies.</li>
+            </ul>
+            <p>Your HTML document should be properly structured using appropriate HTML tags. Click the "Run" button to see the result.</p>
+        </section>
+        
+
+        <!-- IDE Test Runs Section -->
         <section class="ide">
             <h2>Integrated Development Environment (IDE)</h2>
             <div class="code-editor">
                 <textarea id="html-code" class="CodeMirror" name="html-code" placeholder="Enter your HTML code here" rows="4" cols="50"></textarea>
                 <textarea id="css-code" class="CodeMirror" name="css-code" placeholder="Enter your CSS code here" rows="4" cols="50"></textarea>
-                <textarea id="js-code" class="CodeMirror" name="js-code" placeholder="Enter your JavaScript code here" rows="4" cols="50"></textarea>                
+                <textarea id="js-code" class="CodeMirror" name="js-code" placeholder="Enter your JavaScript code here" rows="4" cols="50"></textarea>
             </div>
             <button id="run-button">Run</button>
         </section>
+
         <section class="result">
             <h2>Result</h2>
             <iframe id="result-frame" sandbox="allow-scripts"></iframe>
@@ -48,38 +93,12 @@
         <button id="submit-result-button">Submit Result</button>
     </main>
 
-        <!-- Include CodeMirror JavaScript via CDN -->
+    <!-- Include CodeMirror JavaScript via CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/codemirror.js"></script>
     <script src="js/css.js"></script>
     <script src="js/javascript.js"></script>
     <script src="js/htmlmixed.js"></script>
     <script src="js/assignment1.js"></script>
     <script src="js/html-submit.js"></script>
-
-
-
-    <!-- <script>
-        // Initialize CodeMirror for HTML code
-        var htmlEditor = CodeMirror.fromTextArea(document.getElementById("html-code"), {
-            mode: "htmlmixed",
-            theme: "default",
-            lineNumbers: true
-        });
-    
-        // Initialize CodeMirror for CSS code
-        var cssEditor = CodeMirror.fromTextArea(document.getElementById("css-code"), {
-            mode: "css",
-            theme: "default",
-            lineNumbers: true
-        });
-    
-        // Initialize CodeMirror for JavaScript code
-        var jsEditor = CodeMirror.fromTextArea(document.getElementById("js-code"), {
-            mode: "javascript",
-            theme: "default",
-            lineNumbers: true
-        });
-    </script> -->
-    
 </body>
 </html>
