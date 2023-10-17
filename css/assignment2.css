@@ -6,16 +6,26 @@ body {
     padding: 0;
 }
 
-header {
+/* header {
     background-color: #6fac8d;
     color: #fff;
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
+} */
+
+header {
+    background-color: #5d956e;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
+
 h1 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -35,9 +45,17 @@ main {
 }
 
 .lecture h2 {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 20px;
 }
+
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
 
 /* Code Editor Styles */
 .code-editor {
@@ -53,10 +71,12 @@ textarea {
     border-radius: 5px;
     padding: 10px;
     font-family: "Courier New", monospace;
+    background-color: #131111;
+    color: rgba(241, 221, 39, 0.932);
 }
 
 button {
-    background-color: #6fac8d;
+    background-color: #5d956e;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -67,7 +87,7 @@ button {
 }
 
 button:hover {
-    background-color: #5a986a;
+    background-color: #6ab47c;
 }
 
 /* Result Styles */
@@ -78,7 +98,7 @@ pre {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: "Courier New", monospace;
-    color: white;
+    color: rgba(241, 221, 39, 0.932);
 }
 
 
