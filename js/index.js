@@ -130,7 +130,7 @@ eventSource.addEventListener('error', (error) => {
   
   // JavaScript to switch images every 5 seconds
   const gallery = document.getElementById('imageGallery');
-  const images = ['img/images (5).jpeg', 'img/images (7).jpeg', 'img/images (9).jpeg', 'img/images (11).jpeg'];
+  const images = ['img/WhatsApp Image 2023-10-17 at 1.29.34 PM.jpeg', 'img/WhatsApp Image 2023-10-17 at 1.30.17 PM.jpeg', 'img/WhatsApp Image 2023-10-17 at 1.30.18 PM.jpeg', 'img/WhatsApp Image 2023-10-17 at 1.30.18 PM (2).jpeg'];
   let currentIndex = 0;
   
   function changeImage() {
