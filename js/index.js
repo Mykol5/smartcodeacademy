@@ -113,20 +113,22 @@ eventSource.addEventListener('error', (error) => {
 
 
   
-  // Function to toggle the sidebar and hamburger menu icon
-  function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    const menuToggle = document.getElementById('menuToggle');
-    const closeToggle = document.getElementById('closeToggle');
-  
-    sidebar.classList.toggle('open');
-    menuToggle.classList.toggle('hidden');
-    closeToggle.classList.toggle('hidden');
-  }
-  
-  // Get the hamburger menu element and add a click event listener
+// Function to toggle the sidebar and hamburger menu icon
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
   const menuToggle = document.getElementById('menuToggle');
-  menuToggle.addEventListener('click', toggleSidebar);
+
+  // Toggle the "active" class on menuToggle to trigger CSS animations
+  menuToggle.classList.toggle('active');
+
+  // Toggle the "open" class to show/hide the sidebar
+  sidebar.classList.toggle('open');
+}
+
+// Get the hamburger menu element and add a click event listener
+const menuToggle = document.getElementById('menuToggle');
+menuToggle.addEventListener('click', toggleSidebar);
+
   
   // JavaScript to switch images every 5 seconds
   const gallery = document.getElementById('imageGallery');

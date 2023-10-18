@@ -8,14 +8,14 @@
 /* Define global styles */
 body {
     font-family: system-ui, 'Open Sans';
-    background-color: #f4f4f4;
+    background-color: #f1f1f1;
     margin: 0;
     padding: 0;
 }
 
 /* Header and Navbar styles */
 header {
-    background-color: #6fac8d;
+    background-color: #38855e;
     color: #fff;
     padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -27,19 +27,22 @@ header {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Vertically align the content */
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .assignment-portal {
-    font-size: 24px;
+    font-size: 21px; /* Increase font size for the portal name */
     font-weight: bold;
-    text-align: center;
     flex-grow: 1;
-    margin-right: 20px;
+    margin-left: 40px;
+    text-align: center; /* Center the portal name */
+}
+
+.assignment-portal:hover {
+    color: #b4d7ee; /* Change text color on hover */
 }
 
 .logo {
@@ -48,11 +51,18 @@ header {
 }
 
 .logo img {
-    width: 30px;
+    width: 40px; /* Increase logo size */
+    height: 40px; /* Set the height for consistency */
     margin-left: 10px;
-    border-radius: 70%;
+    border-radius: 50%; /* Make the logo circular */
+    transition: transform 0.2s ease; /* Add a subtle hover effect */
 }
 
+.logo img:hover {
+    transform: scale(1.8); /* Scale the logo on hover */
+}
+
+/* Hamburger menu styles */
 /* Hamburger menu styles */
 .menu-toggle {
     display: flex;
@@ -66,39 +76,49 @@ header {
     z-index: 1;
 }
 
-.bar {
+.bar, .close-bar {
     width: 30px;
     height: 3px;
     background-color: #fff;
     margin: 2px 0;
-    transition: 0.4s;
 }
 
-/* Styles for the "X" close button */
-#closeToggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    padding: 10px;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 1;
-}
-
+/* Initial state for close-bar, hidden by default */
 .close-bar {
-    width: 30px;
-    height: 3px;
-    background-color: #fff;
-    margin: 2px 0;
-    transition: 0.4s;
-    transform-origin: center;
+    display: none;
 }
+
+/* CSS animation for toggling the menu icon */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.menu-toggle:not(.active) .bar {
+    transition: 0.6s;
+}
+
+.menu-toggle.active .close-bar:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.menu-toggle.active .close-bar:nth-child(2) {
+    transform: rotate(-45deg);
+}
+
+
+
 
 /* Sidebar styles */
 .sidebar {
-    background-color: #343a40;
+    background-color: #38855e;
     color: #fff;
     width: 250px;
     padding: 20px;
@@ -106,10 +126,11 @@ header {
     position: fixed;
     top: 0;
     left: -250px; /* Hide the sidebar by default for smaller screens */
-    transition: left 0.3s ease-in-out;
+    transition: left 0.5s ease-in-out;
     overflow-y: auto;
     z-index: 10;
 }
+
 
 .user-greeting {
     text-align: center;
