@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const submitResultButton = document.getElementById('submit-result-button');
+    const submitResultButton = document.getElementById('submit-result-button1');
     const htmlCodeTextarea = document.getElementById('html-code');
     const cssCodeTextarea = document.getElementById('css-code');
     const jsCodeTextarea = document.getElementById('js-code');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Get the authentication token from wherever it's stored (e.g., localStorage)
         const token = localStorage.getItem('authToken');
-        const lectureName = "Introduction to HTML"; // Replace with the actual lecture name
+        const lectureName = "Introduction to HTML 1"; // Replace with the actual lecture name
 
         console.log('Authentication Token:', token); // Log the authentication token
 
