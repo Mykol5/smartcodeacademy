@@ -44,5 +44,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// name = "mike"
-// print("Hello, " + name + "!" + "You are 30 years old")
