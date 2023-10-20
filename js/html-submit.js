@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(`${lectureName} exercise submitted successfully`);
 
             // Redirect to the dashboard page
-            window.location.href = '/client/index.html'; // Replace with your actual dashboard page URL
+            window.location.href = '/index.html'; // Replace with your actual dashboard page URL
 
         } else {
             // Handle errors if submission fails
