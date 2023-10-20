@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 2: HTML Structure and Elements</title>
+    <link rel="stylesheet" href="css/assignment1.css">
+    <!-- Include CodeMirror CSS via CDN -->
+    <link rel="stylesheet" href="css/codemirror.css">
+</head>
+<body>
+    <header>
+        <h1>Lecture 2: HTML Forms and Input Elements</h1>
+    </header>
+    <main>
+        <!-- Video Section -->
+        <section class="video">
+            <h2>Video Lecture</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </section>
+
+        <!-- Forms and Input Elements -->
+        <section class="forms">
+            <h2>Forms and Input Elements</h2>
+            <p>HTML allows you to create interactive forms that users can fill out. Forms are crucial for various online applications, from simple contact forms to complex user registrations. Here are some key form-related elements:</p>
+            
+            <h3>&lt;form&gt; Element</h3>
+            <p>The &lt;form&gt; element is used to create an HTML form. It defines where user input will be collected and sent to a server for processing. It can include various input elements such as text fields, checkboxes, radio buttons, and more.</p>
+            
+            <h3>Common Input Elements</h3>
+            <p>HTML provides several input elements that can be included within a form:</p>
+            <ul>
+                <li><strong>&lt;input type="text"&gt;:</strong> Creates a single-line text input field.</li>
+                <li><strong>&lt;input type="password"&gt;:</strong> Creates a password input field with hidden characters.</li>
+                <li><strong>&lt;input type="checkbox"&gt;:</strong> Creates checkboxes that allow users to select multiple options.</li>
+                <li><strong>&lt;input type="radio"&gt;:</strong> Creates radio buttons, allowing users to select one option from multiple choices.</li>
+                <li><strong>&lt;select&gt; and &lt;option&gt;:</strong> Create dropdown lists with selectable options.</li>
+                <li><strong>&lt;textarea&gt;:</strong> Creates a multi-line text input field for longer text.</li>
+            </ul>
+            
+            <h3>Example Form</h3>
+            <p>Here's an example of an HTML form:</p>
+            <div class="code-container">
+                <pre>
+                    <code>
+&lt;form action="/submit" method="post"&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username"&gt;
+    
+    &lt;label for="password"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="password" name="password"&gt;
+    
+    &lt;label&gt;Select your gender:&lt;/label&gt;
+    &lt;input type="radio" id="male" name="gender" value="male"&gt;
+    &lt;label for="male"&gt;Male&lt;/label&gt;
+    &lt;input type="radio" id="female" name="gender" value="female"&gt;
+    &lt;label for="female"&gt;Female&lt;/label&gt;
+    
+    &lt;label for="country"&gt;Country:&lt;/label&gt;
+    &lt;select id="country" name="country"&gt;
+        &lt;option value="usa"&gt;USA&lt;/option&gt;
+        &lt;option value="canada"&gt;Canada&lt;/option&gt;
+        &lt;option value="uk"&gt;UK&lt;/option&gt;
+    &lt;/select&gt;
+    
+    &lt;label for="comments"&gt;Comments:&lt;/label&gt;
+    &lt;textarea id="comments" name="comments"&gt;&lt;/textarea&gt;
+    
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+                    </code>
+                </pre>
+            </div>
+        </section>
+
+        <!-- Class Exercise -->
+        <section class="class-exercise">
+            <h2>Class Exercise</h2>
+            <p>Now, it's time for you to practice creating HTML forms and input elements. Please follow these instructions:</p>
+            <ol>
+                <li>Create a simple registration form with the following fields:
+                    <ul>
+                        <li>First Name (Text input)</li>
+                        <li>Last Name (Text input)</li>
+                        <li>Email (Text input)</li>
+                        <li>Password (Password input)</li>
+                        <li>Gender (Radio buttons for Male and Female)</li>
+                        <li>Country (Dropdown list with options like USA, Canada, and UK)</li>
+                        <li>Comments (Textarea)</li>
+                    </ul>
+                </li>
+                <li>Add appropriate labels and attributes to each input element.</li>
+                <li>Include a "Submit" button to send the form.</li>
+                <li>Don't forget to structure your form within the &lt;form&gt; element.</li>
+            </ol>
+            <p>After creating the form, click the "Run" button to see the result. Feel free to experiment and customize the form as you like.</p>
+        </section>
+
+        <!-- IDE Test Runs Section -->
+        <section class="ide">
+            <h2>Integrated Development Environment (IDE)</h2>
+            <div class="code-editor">
+                <textarea id="html-code" class="CodeMirror" name="html-code" placeholder="Enter your HTML code here" rows="4" cols="50"></textarea>
+                <textarea id="css-code" class "CodeMirror" name="css-code" placeholder="Enter your CSS code here" rows="4" cols="50"></textarea>
+                <textarea id="js-code" class="CodeMirror" name="js-code" placeholder="Enter your JavaScript code here" rows="4" cols="50"></textarea>
+            </div>
+            <button id="run-button">Run</button>
+        </section>
+
+        <section class="result">
+            <h2>Result</h2>
+            <iframe id="result-frame" sandbox="allow-scripts"></iframe>
+        </section>
+
+        <!-- Add the Submit Result button here -->
+        <button id="submit-result-button">Submit Result</button>
+    </main>
+
+    <script src="js/html-submit.js"></script>
+    <script>
+        // Add a click event for the submit button (you can implement submission logic here)
+        document.getElementById("submit-result-button").addEventListener("click", function () {
+            // Implement submission logic here
+            alert("Submission successful!");
+        });
+    </script>
+
+    <!-- Include CodeMirror JavaScript via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/codemirror.js"></script>
+    <script src="js/css.js"></script>
+    <script src="js/javascript.js"></script>
+    <script src="js/htmlmixed.js"></script>
+    <script src="js/assignment1.js"></script>
+</body>
+</html>

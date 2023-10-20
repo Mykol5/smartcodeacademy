@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cssCodeTextarea = document.getElementById('css-code');
     const jsCodeTextarea = document.getElementById('js-code');
 
-    submitResultButton.addEventListener('click', async () => {
+    // Create a function to submit lecture results
+    const submitLecture = async (lectureName) => {
         const htmlCode = htmlCodeTextarea.value;
         const cssCode = cssCodeTextarea.value;
         const jsCode = jsCodeTextarea.value;
@@ -18,33 +19,93 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Get the authentication token from wherever it's stored (e.g., localStorage)
         const token = localStorage.getItem('authToken');
-        const lectureName = "Introduction to HTML"; // Replace with the actual lecture name
 
         console.log('Authentication Token:', token); // Log the authentication token
 
         // Send the code content to the server for processing
         const lectureResponse = await fetch('https://smartcodebase.onrender.com/api/submit-lecture-result', {
-            method: 'PUT', // Change to PUT method
+            method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json', // Add Content-Type header
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ htmlCode, cssCode, jsCode, lectureName }), // Include lectureName
+            body: JSON.stringify({ htmlCode, cssCode, jsCode, lectureName }),
         });
 
         if (lectureResponse.ok) {
             // Content submitted successfully
-            console.log('Lecture exercise submitted successfully');
+            console.log(`${lectureName} exercise submitted successfully`);
 
             // Redirect to the dashboard page
-            window.location.href = '/index.html'; // Replace with your actual dashboard page URL
+            window.location.href = '/client/index.html'; // Replace with your actual dashboard page URL
 
         } else {
             // Handle errors if submission fails
-            console.error('Failed to submit lecture result');
+            console.error(`Failed to submit ${lectureName} result`);
         }
+    };
+
+    submitResultButton.addEventListener('click', () => {
+        // Call submitLecture with the lecture name (e.g., "Introduction to HTML")
+        submitLecture("Introduction to HTML"); // Replace with the actual lecture name
+        submitLecture("Introduction to HTML 1"); // Add the second lecture name
     });
 });
+
+
+
+
+
+
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     const submitResultButton = document.getElementById('submit-result-button');
+//     const htmlCodeTextarea = document.getElementById('html-code');
+//     const cssCodeTextarea = document.getElementById('css-code');
+//     const jsCodeTextarea = document.getElementById('js-code');
+
+//     submitResultButton.addEventListener('click', async () => {
+//         const htmlCode = htmlCodeTextarea.value;
+//         const cssCode = cssCodeTextarea.value;
+//         const jsCode = jsCodeTextarea.value;
+
+//         // Check if HTML, CSS, and JS code text areas are empty
+//         if (!htmlCode.trim() || !cssCode.trim() || !jsCode.trim()) {
+//             // If any of the text areas are empty, prevent submission and display an error message
+//             alert('Please enter code in all text areas before submitting.');
+//             return; // Exit the function, submission is prevented
+//         }
+
+//         // Get the authentication token from wherever it's stored (e.g., localStorage)
+//         const token = localStorage.getItem('authToken');
+//         const lectureName = "Introduction to HTML"; // Replace with the actual lecture name
+
+//         console.log('Authentication Token:', token); // Log the authentication token
+
+//         // Send the code content to the server for processing
+//         const lectureResponse = await fetch('https://smartcodebase.onrender.com/api/submit-lecture-result', {
+//             method: 'PUT', // Change to PUT method
+//             headers: {
+//                 'Authorization': `Bearer ${token}`,
+//                 'Content-Type': 'application/json', // Add Content-Type header
+//             },
+//             body: JSON.stringify({ htmlCode, cssCode, jsCode, lectureName }), // Include lectureName
+//         });
+
+//         if (lectureResponse.ok) {
+//             // Content submitted successfully
+//             console.log('Lecture exercise submitted successfully');
+
+//             // Redirect to the dashboard page
+//             window.location.href = '/index.html'; // Replace with your actual dashboard page URL
+
+//         } else {
+//             // Handle errors if submission fails
+//             console.error('Failed to submit lecture result');
+//         }
+//     });
+// });
 
 
 
