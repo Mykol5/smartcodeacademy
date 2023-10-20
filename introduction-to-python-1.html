@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to PYTHON (Contd.)</title>
+    <link rel="stylesheet" href="css/assignment2.css">
+</head>
+<body>
+    <header>
+        <h1>Introduction to Python (Contd.)</h1>
+    </header>
+    <main>
+        <section class="lecture">
+            <h2>Lecture: Working with Python Variables</h2>
+            <p>In Python, variables are essential for storing and working with data. Let's explore some common variable operations and data types:</p>
+            
+            <h3>Variable Assignment</h3>
+            <p>You can assign values to variables using the <code>=</code> operator:</p>
+            <pre><code>
+                message = "Hello, Python!"
+                number = 42
+                pi = 3.14159
+            </code></pre>
+            
+            <h3>Variable Types</h3>
+            <p>Python supports various data types:</p>
+            <ul>
+                <li><strong>Strings (str):</strong> Used for text, enclosed in single or double quotes.</li>
+                <li><strong>Integers (int):</strong> Used for whole numbers.</li>
+                <li><strong>Floats (float):</strong> Used for decimal numbers.</li>
+                <li><strong>Booleans (bool):</strong> Used for true or false values.</li>
+                <li><strong>Lists (list):</strong> Used to store collections of items.</li>
+                <li><strong>Dictionaries (dict):</strong> Used to store key-value pairs.</li>
+            </ul>
+            
+            <h3>Operations on Variables</h3>
+            <p>You can perform various operations on variables, such as arithmetic calculations, string concatenation, and more:</p>
+            <pre><code>
+                # Arithmetic operations
+                a = 5
+                b = 3
+                sum_result = a + b
+                difference = a - b
+                product = a * b
+                quotient = a / b
+
+                # String concatenation
+                first_name = "John"
+                last_name = "Doe"
+                full_name = first_name + " " + last_name
+
+                # List operations
+                fruits = ["apple", "banana", "cherry"]
+                fruits.append("date")
+                fruits.remove("banana")
+
+                # Dictionary operations
+                student = {"name": "Alice", "age": 25}
+                student["grade"] = "A"
+            </code></pre>
+        </section>
+        
+        <section class="assessment">
+            <h2>Assessment</h2>
+            <p>Now it's time for you to practice. Write a Python program that:</p>
+            <ol>
+                <li>Creates a variable called <code>name</code> with your name.</li>
+                <li>Creates a variable called <code>age</code> with your age.</li>
+                <li>Combines these variables to display a message like "<code>Hello, John! You are 30 years old.</code>"</li>
+            </ol>
+            <div class="code-editor">
+                <textarea id="python-code" placeholder="Enter your Python code here"></textarea>
+            </div>
+            <button id="run-button">Run</button>
+        </section>
+        
+        <section class="result">
+            <h2>Result</h2>
+            <iframe id="result-frame" sandbox="allow-scripts allow-same-origin"></iframe>
+        </section>
+        
+        <button id="submit-button">Submit Your Answer</button>
+    </main>
+
+    <script>
+        function initSkulpt() {
+            Sk.configure({
+                output: function (text) {
+                    // Display Skulpt output in the result iframe
+                    document.getElementById("result-frame").contentWindow.document.body.innerHTML = text;
+                },
+            });
+        }
+
+        // // Call initSkulpt before any Skulpt-related operations
+        // initSkulpt();
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("run-button").addEventListener("click", function () {
+                var pythonCode = document.getElementById("python-code").value;
+                Sk.misceval.asyncToPromise(function () {
+                    return Sk.importMainWithBody("<stdin>", false, pythonCode, true);
+                }).catch(function (error) {
+                    // Handle Python code execution errors
+                    console.error(error);
+                });
+            });
+        });
+
+        // Add a click event for the submit button (you can implement submission logic here)
+        document.getElementById("submit-button").addEventListener("click", function () {
+            // Implement submission logic here
+            alert("Submission successful!");
+        });
+    </script>
+
+    <!-- Include Skulpt libraries and scripts here -->
+    <script src="js/skulpt.min.js" type="text/javascript"></script>
+    <script src="js/skulpt-stdlib.js" type="text/javascript"></script>
+    <script src="js/python-submit.js" type="text/javascript"></script>
+    <script>
+        // Call initSkulpt after Skulpt is loaded
+        initSkulpt();
+    </script>
+</body>
+</html>
