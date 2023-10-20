@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Authentication Token:', token); // Log the authentication token
 
         // Send the code content to the server for processing
-        const lectureResponse = await fetch('http://localhost:8080/api/submit-lecture-result-python', { // Update the URL
+        const lectureResponse = await fetch('https://smartcodebase.onrender.com/api/submit-lecture-result-python', { // Update the URL
             method: 'PUT', // Change to PUT method
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Python lecture exercise submitted successfully');
 
             // Redirect to the dashboard page
-            window.location.href = '/client/index.html'; // Replace with your actual dashboard page URL
+            window.location.href = '/index.html'; // Replace with your actual dashboard page URL
 
         } else {
             // Handle errors if submission fails
@@ -41,3 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+
+// name = "mike"
+// print("Hello, " + name + "!" + "You are 30 years old")
