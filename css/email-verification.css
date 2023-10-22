@@ -1,105 +1,113 @@
 /* Reset some default styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-  }
-  
-  /* Center the verification form on the page */
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f2f2f2;
-  }
-  
-  /* Style the verification form */
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, 'Open Sans';
+  background-color: #f2f2f2;
+}
+
+/* Center the verification form on the page */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+}
+
+/* Style the verification form */
+.verification-form {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+/* Style the verification form title */
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Style form elements */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  margin: 0 auto; /* Center the input field */
+}
+
+/* Style the verification button */
+.btn-verify {
+  background-color: #007bff; /* Change to your desired color */
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin: 0 auto; /* Center the button */
+}
+
+.btn-verify:hover {
+  background-color: #0056b3;
+}
+
+/* Style error messages */
+.error-message {
+  color: #ff3333;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Style the success message */
+.success-message {
+  color: #4caf50;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Style the footer text */
+.footer-text {
+  color: #888;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+/* Add media query for smaller screens */
+@media screen and (max-width: 600px) {
   .verification-form {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
+    max-width: 100%;
   }
-  
-  /* Style the verification form title */
-  .form-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  /* Style form elements */
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-group label {
-    display: block;
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  
+
+  /* Reduce input padding and margin further for smaller screens */
   .form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #333;
+    padding: 8px;
+    margin: 0 auto;
   }
-  
-  /* Style the verification button */
-  .btn-verify {
-    background-color: #007bff;
-    color: #fff;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-verify:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Style error messages */
-  .error-message {
-    color: #ff3333;
-    font-size: 14px;
-    margin-top: 10px;
-  }
-  
-  /* Style the success message */
-  .success-message {
-    color: #4caf50;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  
-  /* Style the footer text */
-  .footer-text {
-    color: #888;
-    font-size: 14px;
-    margin-top: 20px;
-  }
-  
-  /* Add media query for smaller screens */
-  @media screen and (max-width: 600px) {
-    .verification-form {
-      padding: 10px;
-      max-width: 100%;
-    }
-  }
-  
+}
