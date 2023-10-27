@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const submitResultButton = document.getElementById('submit-result-button1');
+    const submitResultButton = document.getElementById('submit-result-button2');
     const htmlCodeTextarea = document.getElementById('html-code');
     const cssCodeTextarea = document.getElementById('css-code');
     const jsCodeTextarea = document.getElementById('js-code');
