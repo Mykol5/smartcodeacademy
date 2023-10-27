@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Assignment 2</title>
+    <link rel="stylesheet" href="css/assignment2.css">
+</head>
+<body>
+    <header>
+        <h1>Python Assignment 2</h1>
+    </header>
+    <main>
+        <section class="assignment">
+            <h2>Assignment</h2>
+            <p>Write a Python program that does the following:</p>
+            <ol>
+                <li>Creates a variable called <code>age</code> and assigns an age to it (e.g., 18).</li>
+                <li>Uses an if-else statement to check if the age is 18. If it is, print "You are eligible to vote." Otherwise, print "You are not eligible to vote."</li>
+                <li>Modify the value of <code>age</code> to test both cases.</li>
+            </ol>
+            <div class="code-editor">
+                <textarea id="python-code" placeholder="Enter your Python code here"></textarea>
+            </div>
+            <button id="run-button">Run</button>
+        </section>
+        
+        <section class="result">
+            <h2>Result</h2>
+            <iframe id="result-frame" sandbox="allow-scripts allow-same-origin"></iframe>
+        </section>
+        
+        <button id="submit-button1">Submit Your Answer</button>
+    </main>
+
+    <script>
+        function initSkulpt() {
+            Sk.configure({
+                output: function (text) {
+                    // Display Skulpt output in the result iframe
+                    document.getElementById("result-frame").contentWindow.document.body.innerHTML = text;
+                },
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("run-button").addEventListener("click", function () {
+                var pythonCode = document.getElementById("python-code").value;
+                Sk.misceval.asyncToPromise(function () {
+                    return Sk.importMainWithBody("<stdin>", false, pythonCode, true);
+                }).catch(function (error) {
+                    // Handle Python code execution errors
+                    console.error(error);
+                });
+            });
+
+            // Add a click event for the submit button (you can implement submission logic here)
+            document.getElementById("submit-button").addEventListener("click", function () {
+                // Implement submission logic here
+                alert("Submission successful!");
+            });
+        });
+        
+        // // Call initSkulpt after Skulpt is loaded
+        // initSkulpt();
+    </script>
+
+    <!-- Include Skulpt libraries and scripts here -->
+    <script src="js/skulpt.min.js" type="text/javascript"></script>
+    <script src="js/skulpt-stdlib.js" type="text/javascript"></script>
+    <script src="js/python-ass-submit1.js" type="text/javascript"></script>
+    <script>
+        // Call initSkulpt after Skulpt is loaded
+        initSkulpt();
+    </script>
+</body>
+</html>
