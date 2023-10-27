@@ -118,8 +118,10 @@ iframe[src*="https://www.youtube.com/watch?v=ucjiQdpp84U"] {
 }
 
 
-/* Additional styles for code block */
 .code-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
     width: 100%; /* Control the width of the container */
-    overflow-x: auto; /* Add horizontal scrollbar if code overflows */
 }
+

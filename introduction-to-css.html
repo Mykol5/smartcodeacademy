@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 3: Introduction to CSS</title>
+    <link rel="stylesheet" href="css/assignment1.css">
+    <!-- Include CodeMirror CSS via CDN -->
+    <link rel="stylesheet" href="css/codemirror.css">
+</head>
+<body>
+    <header>
+        <h1>Lecture 3: Introduction to CSS</h1>
+    </header>
+    <main>
+                <!-- Video Section -->
+                <section class="video">
+                    <h2>Video Lecture</h2>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ucjiQdpp84U?si=llEFfijZVksD40wH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </section>
+        
+
+
+                <section class="content">
+                    <h2>Introduction to CSS</h2>
+                    <p>Cascading Style Sheets (CSS) are a fundamental part of web development. They allow us to control the presentation and layout of our web pages, making them visually appealing and user-friendly. There are several types of CSS, and they can be applied to an HTML document in various ways:</p>
+                
+                    <h3>Types of CSS</h3>
+                    <ul>
+                        <li><strong>Inline CSS:</strong> You can apply CSS styles directly to HTML elements using the "style" attribute. For example:</li>
+                        <div class="code-container">
+                            <pre>
+                                <code>
+                &lt;p style="color: blue; font-size: 16px;"&gt;This is a styled paragraph.&lt;/p&gt;
+                                </code>
+                            </pre>
+                        </div>
+                        <li><strong>Internal CSS:</strong> You can define CSS rules within the &lt;style&gt; element in the HTML document's &lt;head&gt; section. For example:</li>
+                        <div class="code-container">
+                            <pre>
+                                <code>
+                &lt;head&gt;
+                    &lt;style&gt;
+                        h1 {
+                            color: blue;
+                        }
+                    &lt;/style&gt;
+                &lt;/head&gt;
+                                </code>
+                            </pre>
+                        </div>
+                        <li><strong>External CSS:</strong> The most common approach is to create a separate CSS file (e.g., styles.css) and link it to the HTML document. For example:</li>
+                        <div class="code-container">
+                            <pre>
+                                <code>
+                &lt;head&gt;
+                    &lt;link rel="stylesheet" href="styles.css"&gt;
+                &lt;/head&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </ul>
+                
+                    <p>Each type of CSS has its advantages and use cases. Inline CSS is useful for quick styling of individual elements, internal CSS allows for document-specific styles, and external CSS promotes maintainability by separating content from presentation.</p>
+                </section>
+                
+
+        <section class="class-example">
+            <h2>Class Example</h2>
+            <p>Here's an example of how to create a basic CSS rule:</p>
+            <div class="code-container">
+                <pre>
+                    <code>
+/* Select all headings and change their text color to blue */
+h1, h2, h3 {
+    color: blue;
+}
+
+/* Set the background color of the page to light gray */
+body {
+    background-color: #f2f2f2;
+}
+
+/* Increase the font size of paragraphs to 16px */
+p {
+    font-size: 16px;
+}
+                    </code>
+                </pre>
+            </div>
+        </section>
+
+        <section class="class-exercise">
+            <h2>Class Exercise</h2>
+            <p>For this exercise, we're going to practice creating CSS rules to style a simple web page. Here's your task:</p>
+            <ol>
+                <li>Create a new CSS file on VSCode (e.g., styles.css).</li>
+                <li>Apply styles to an HTML document to achieve the following:
+                    <ul>
+                        <li>Change the text color of all headings to blue.</li>
+                        <li>Set the background color of the page to a light gray (#f2f2f2).</li>
+                        <li>Increase the font size of paragraphs to 16px.</li>
+                    </ul>
+                </li>
+                <li>Link your CSS file to the HTML document.</li>
+                <li>Preview your styled web page in a browser.</li>
+            </ol>
+            <p>Feel free to experiment and customize your styles further. Remember, practice makes perfect!</p>
+        </section>
+
+        <!-- IDE Test Runs Section -->
+        <section class="ide">
+            <h2>Integrated Development Environment (IDE)</h2>
+            <div class="code-editor">
+                <textarea id="html-code" class="CodeMirror" name="html-code" placeholder="Enter your HTML code here" rows="4" cols="50"></textarea>
+                <textarea id="css-code" class="CodeMirror" name="css-code" placeholder="Enter your CSS code here" rows="4" cols="50"></textarea>
+                <textarea id="js-code" class="CodeMirror" name="js-code" placeholder="Enter your JavaScript code here" rows="4" cols="50"></textarea>
+            </div>
+            <button id="run-button">Run</button>
+        </section>
+
+        <section class="result">
+            <h2>Result</h2>
+            <iframe id="result-frame" sandbox="allow-scripts"></iframe>
+        </section>
+
+        <!-- Add the Submit Result button here -->
+        <button id="submit-result-button">Submit Result</button>
+    </main>
+
+
+<script>
+
+            // Add a click event for the submit button (you can implement submission logic here)
+            document.getElementById("submit-result-button").addEventListener("click", function () {
+            // Implement submission logic here
+            alert("Submission successful!");
+            });
+
+</script>
+
+    <!-- Include CodeMirror JavaScript via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/codemirror.js"></script>
+    <script src="js/css.js"></script>
+    <script src="js/javascript.js"></script>
+    <script src="js/htmlmixed.js"></script>
+    <script src="js/assignment1.js"></script>
+    <script src="js/html-submit.js"></script>
+
+</body>
+</html>
+
