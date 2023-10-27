@@ -12,63 +12,62 @@
     </header>
     <main>
         <section class="lecture">
-            <h2>Lecture: Working with Python Variables</h2>
-            <p>In Python, variables are essential for storing and working with data. Let's explore some common variable operations and data types:</p>
+            <h2>Lecture: Conditional Statements in Python</h2>
+            <p>Conditional statements are crucial in programming as they allow you to execute different code blocks based on specific conditions. In Python, you can use the following conditional statements:</p>
             
-            <h3>Variable Assignment</h3>
-            <p>You can assign values to variables using the <code>=</code> operator:</p>
+            <h3>if Statement</h3>
+            <p>The <code>if</code> statement is used to execute a block of code if a condition is true:</p>
             <pre><code>
-                message = "Hello, Python!"
-                number = 42
-                pi = 3.14159
+                if condition:
+                    # Code to execute if the condition is true
             </code></pre>
             
-            <h3>Variable Types</h3>
-            <p>Python supports various data types:</p>
-            <ul>
-                <li><strong>Strings (str):</strong> Used for text, enclosed in single or double quotes.</li>
-                <li><strong>Integers (int):</strong> Used for whole numbers.</li>
-                <li><strong>Floats (float):</strong> Used for decimal numbers.</li>
-                <li><strong>Booleans (bool):</strong> Used for true or false values.</li>
-                <!-- <li><strong>Lists (list):</strong> Used to store collections of items.</li>
-                <li><strong>Dictionaries (dict):</strong> Used to store key-value pairs.</li> -->
-            </ul>
-            
-            <h3>Operations on Variables</h3>
-            <p>You can perform various operations on variables, such as arithmetic calculations, string concatenation, and more:</p>
+            <h3>if-else Statement</h3>
+            <p>The <code>if-else</code> statement allows you to execute one block of code if a condition is true and another block if it's false:</p>
             <pre><code>
-                # Arithmetic operations
-                a = 5
-                b = 3
-                sum_result = a + b
-                difference = a - b
-                product = a * b
-                quotient = a / b
-
-                # String concatenation
-                first_name = "John"
-                last_name = "Doe"
-                full_name = first_name + " " + last_name
-
-                <!-- # List operations
-                fruits = ["apple", "banana", "cherry"]
-                fruits.append("date")
-                fruits.remove("banana")
-
-                # Dictionary operations
-                student = {"name": "Alice", "age": 25}
-                student["grade"] = "A" -->
-
+                if condition:
+                    # Code to execute if the condition is true
+                else:
+                    # Code to execute if the condition is false
+            </code></pre>
+            
+            <h3>if-elif-else Statement</h3>
+            <p>The <code>if-elif-else</code> statement is used to test multiple conditions. It executes different code blocks based on the first true condition found:</p>
+            <pre><code>
+                if condition1:
+                    # Code to execute if condition1 is true
+                elif condition2:
+                    # Code to execute if condition2 is true
+                else:
+                    # Code to execute if no conditions are true
             </code></pre>
         </section>
-        
+
+        <section class="example">
+            <h2>Class Example: Using Conditional Statements</h2>
+            <p>Let's see an example of using conditional statements in Python:</p>
+            <pre><code>
+                # Example of using if-else statement
+                age = 18
+                if age < 18:
+                    print("You are a minor.")
+                else:
+                    print("You are an adult.")
+            </code></pre>
+        </section>
+
         <section class="assessment">
-            <h2>Assessment</h2>
-            <p>Now it's time for you to practice. Write a Python program that:</p>
+            <h2>Class Assessment: Python Conditional Statements</h2>
+            <p>Now, let's practice using conditional statements in Python. Write a Python program that:</p>
             <ol>
-                <li>Creates a variable called <code>name</code> with your name.</li>
                 <li>Creates a variable called <code>age</code> with your age.</li>
-                <li>Combines these variables to display a message like "<code>Hello, John! You are 30 years old.</code>"</li>
+                <li>Uses an if-else statement to check the value of <code>age</code and prints a corresponding message:
+                    <ul>
+                        <li>If <code>age</code> is less than 18, print "You are a minor."</li>
+                        <li>Else, print "You are an adult."</li>
+                    </ul>
+                </li>
+                <li>Modify the value of <code>age</code> to test different cases.</li>
             </ol>
             <div class="code-editor">
                 <textarea id="python-code" placeholder="Enter your Python code here"></textarea>
@@ -119,7 +118,7 @@
     <!-- Include Skulpt libraries and scripts here -->
     <script src="js/skulpt.min.js" type="text/javascript"></script>
     <script src="js/skulpt-stdlib.js" type="text/javascript"></script>
-    <script src="js/python-submit1.js" type="text/javascript"></script>
+    <script src="js/python-submit2.js" type="text/javascript"></script>
     <script>
         // Call initSkulpt after Skulpt is loaded
         initSkulpt();
