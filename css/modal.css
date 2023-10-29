@@ -1,0 +1,161 @@
+/* Modal */
+/* .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+  } */
+  
+  /* Modal content */
+  /* .modal-content {
+    background-color: #f4f4f4;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+  } */
+  
+  /* Close button */
+  /* .close {
+    color: #888;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  } */
+
+
+
+
+
+
+
+  /* #notification {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    max-width: 300px;
+  }
+  
+  #notification p {
+    margin: 0;
+  }
+  
+  #close-notification {
+    display: none;
+    background-color: #ff5555;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-top: 5px;
+  }
+  
+  #close-notification:hover {
+    background-color: #ff0000;
+  }
+   */
+  
+
+
+
+   /* Styling for the overlay with box shadow */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+    z-index: 999; /* Ensure the overlay is on top of other elements */
+    pointer-events: none; /* Allow interactions with elements behind the overlay */
+    opacity: 0; /* Initially transparent */
+    transition: opacity 0.5s; /* Smooth transition effect */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Initial shadow for overlay */
+}
+
+
+/* Styling for the notification container */
+.notification-container {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px; /* Adjust this value to control the popup's vertical position */
+    width: 190px; /* Set a fixed width for the notification */
+    height: 200px; /* Set a fixed height for the notification */
+    text-align: center;
+    display: none;
+}
+
+/* Styling for the notification */
+.notification {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add box shadow for the notification */
+    animation: slideIn 3s ease-in-out forwards, slideOut 15s ease-in-out 2.5s forwards;
+    position: relative;
+    z-index: 1000; /* Place the notification above the overlay */
+}
+
+/* Styling for the notification message */
+.notification-message {
+    margin: 0;
+}
+
+/* Styling for the close button at the top-right corner */
+.close-notification {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Apply overlay opacity when the notification is active */
+.notification-container.active ~ .overlay {
+    opacity: 1;
+    pointer-events: auto; /* Allow interactions with the overlay */
+    box-shadow: none; /* Remove shadow on overlay */
+}
+
+
+/* Keyframes for the slide in and out animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(50%);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(50%);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
