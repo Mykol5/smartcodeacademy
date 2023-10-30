@@ -123,22 +123,33 @@
             </div>
         </section>
 
-        <!-- Feedback Section -->
-        <section class="feedback">
-            <h2>Provide Feedback</h2>
-            <!-- Feedback Form -->
-            <form id="feedback-form">
-                <label for="assignment-feedback">Assignment Feedback:</label>
-                <textarea id="assignment-feedback" name="assignment-feedback" rows="4" cols="50"></textarea>
-                <br><br>
-                <label for="course-feedback">Course Feedback:</label>
-                <textarea id="course-feedback" name="course-feedback" rows="4" cols="50"></textarea>
-                <br><br>
-                <input type="submit" value="Submit Feedback">
-            </form>
-        </section>
-
+            <!-- Feedback Section -->
+            <section class="feedback">
+                <h2>Provide Feedback</h2>
+                <!-- Feedback Form -->
+                <form id="feedback-form">
+                    <label for="assignment-feedback">Assignment Feedback:</label>
+                    <textarea id="assignment-feedback" name="assignment-feedback" rows="4" cols="50"></textarea>
+                    <br><br>
+                    <label for="course-feedback">Course Feedback:</label>
+                    <textarea id="course-feedback" name="course-feedback" rows="4" cols="50"></textarea>
+                    <br><br>
+                    <input type="submit" value="Submit Feedback" onclick="submitFeedback()">
+                </form>
+            </section>
     </main>
+
+    
+    <script>
+        function showFeedbackReceivedNotification() {
+            alert("Thank you for your feedback. We'll get back to you shortly.");
+        }
+    
+        function submitFeedback() {
+            showFeedbackReceivedNotification();
+            location.reload(); // Reload the page after showing the alert
+        }
+    </script>
 
 
 
