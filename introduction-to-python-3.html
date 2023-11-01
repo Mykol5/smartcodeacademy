@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in Python</title>
+    <link rel="stylesheet" href="css/assignment2.css">
+</head>
+<body>
+    <header>
+        <h1>Loops in Python</h1>
+    </header>
+    <main>
+        <section class="lecture">
+            <h2>Lecture: While Loop</h2>
+            <p>The `while` loop continues to execute a block of code as long as a specified condition is `True`. It's particularly useful when you don't know in advance how many iterations are required.</p>
+            
+            <h3>Syntax of a While Loop:</h3>
+            <pre><code>
+while condition:
+    # Code to execute as long as the condition is True
+            </code></pre>
+        </section>
+
+        <section class="lecture">
+            <h2>Lecture: For Loop</h2>
+            <p>The `for` loop is used to iterate over a sequence (such as a list, tuple, or string) or other iterable objects. It executes a block of code for each item in the sequence.</p>
+            
+            <h3>Syntax of a For Loop:</h3>
+            <pre><code>
+for variable in sequence:
+    # Code to execute for each item in the sequence
+            </code></pre>
+        </section>
+
+        <section class="example">
+            <h2>Class Example: Using Loops</h2>
+            <p>Let's use both `while` and `for` loops to count from 1 to 5 and print each number.</p>
+            <pre><code>
+# Example of using a while loop to count from 1 to 5
+count = 1
+while count <= 5:
+    print(count)
+    count += 1  # Increment the count
+
+# Example of using a for loop to count from 1 to 5
+for count in range(1, 6):
+    print(count)
+            </code></pre>
+        </section>
+
+
+        <section class="assessment">
+            <h2>Class Exercise: Sum of Even Numbers</h2>
+            <p>Now, let's practice using loops. Write a Python program that calculates the sum of even numbers from 1 to 10.</p>
+            <ol>
+                <li>Create a variable `total` and set it to 0.</li>
+                <li>Use a `for` loop to iterate through numbers from 1 to 10.</li>
+                <li>Inside the loop, check if the number is even (i.e., divisible by 2). If it's even, add it to the `total`.</li>
+                <li>After the loop, print the `total` to display the sum of even numbers.</li>
+            </ol>
+            <div class="code-editor">
+                <textarea id="python-code" placeholder="Enter your Python code here"></textarea>
+            </div>
+            <button id="run-button">Run</button>
+        </section>
+        
+        <section class="result">
+            <h2>Result</h2>
+            <iframe id="result-frame" sandbox="allow-scripts allow-same-origin"></iframe>
+        </section>
+        <button id="submit-button">Submit Your Answer</button>
+    </main>
+    
+    <script>
+        function initSkulpt() {
+            Sk.configure({
+                output: function (text) {
+                    // Display Skulpt output in the result iframe
+                    document.getElementById("result-frame").contentWindow.document.body.innerHTML = text;
+                },
+            });
+        }
+
+        // Call initSkulpt before any Skulpt-related operations
+        // initSkulpt();
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("run-button").addEventListener("click", function () {
+                var pythonCode = document.getElementById("python-code").value;
+                Sk.misceval.asyncToPromise(function () {
+                    return Sk.importMainWithBody("<stdin>", false, pythonCode, true);
+                }).catch(function (error) {
+                    // Handle Python code execution errors
+                    console.error(error);
+                });
+            });
+        });
+
+        // Add a click event for the submit button (you can implement submission logic here)
+        document.getElementById("submit-button").addEventListener("click", function () {
+            // Implement submission logic here
+            alert("Submission successful!");
+        });
+    </script>
+
+    <!-- Include Skulpt libraries and scripts here -->
+    <script src="js/skulpt.min.js" type="text/javascript"></script>
+    <script src="js/skulpt-stdlib.js" type="text/javascript"></script>
+    <script src="js/python-submit3.js" type="text/javascript"></script>
+    <script>
+        // Call initSkulpt after Skulpt is loaded
+        initSkulpt();
+    </script>
+</body>
+</html>
