@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Lecture screenshot submitted successfully');
 
             // Redirect to the dashboard page or update the badge
-            window.location.href = '/client/index.html'; // Replace with your actual dashboard page URL
+            window.location.href = '/index.html'; // Replace with your actual dashboard page URL
         } else {
             // Handle errors if submission fails
             console.error('Failed to submit lecture screenshot');
