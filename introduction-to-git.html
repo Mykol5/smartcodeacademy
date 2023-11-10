@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to VSCode</title>
+    <link rel="stylesheet" href="css/assignment2.css">
+    <script src="js/vscode-lecture2.js" type="text/javascript"></script>
+</head>
+<body>
+    <header>
+        <h1>Introduction to Git & GitHub</h1>
+    </header>
+    <main>
+        <section class="lecture">
+            <h2>Lecture: Introduction to Git and GitHub</h2>
+            <p>Git is a distributed version control system that helps you track changes in your code and collaborate with others. GitHub, on the other hand, is a web-based platform that provides hosting for software development and a centralized location for version-controlled code. In this lecture, you'll learn the basics of Git and GitHub.</p>
+        
+            <h3>1. Getting Started with Git</h3>
+            <p>If you haven't installed Git on your machine, visit the <a href="https://git-scm.com/">Official Git website</a> and follow the instructions for your operating system.</p>
+            <ol>
+                <li>Visit the following link for a pictorial guide on how to install Git on Windows:
+                    <a href="https://phoenixnap.com/kb/how-to-install-git-windows" target="_blank">How to Install Git on Windows</a>
+                </li>
+                <li>Open a terminal in your development environment.</li>
+                <li>Create a new folder for your project: <code>mkdir git-intro</code></li>
+                <li>Navigate into the project folder: <code>cd git-intro</code></li>
+                <li>Initialize a new Git repository: <code>git init</code></li>
+            </ol>
+        
+            <h3>2. Basic Git Commands</h3>
+            <p>Learn some fundamental Git commands. For more details, you can refer to the <a href="https://docs.github.com/en/get-started/using-git/about-git#basic-git-commands" target="_blank">GitHub documentation</a>:</p>
+            <ol>
+                <li>Create a new file: <code>touch index.html</code></li>
+                <li>Add the file to the staging area: <code>git add index.html</code></li>
+                <li>Commit the changes: <code>git commit -m "Initial commit"</code></li>
+                <li>View the commit history: <code>git log</code></li>
+            </ol>
+        
+            <h3>3. Creating a GitHub Repository</h3>
+            <p>Go to the GitHub website (https://github.com/) and create a new account if you don't have one. Follow these steps to create a new repository:</p>
+            <ol>
+                <li>Click on the "+" sign in the top right corner and select "New repository."</li>
+                <li>Give your repository a name (e.g., git-intro) and add a description.</li>
+                <li>Initialize this repository with a README if prompted.</li>
+                <li>Click "Create repository."</li>
+            </ol>
+        
+            <h3>4. Connecting Git with GitHub</h3>
+            <p>Follow these steps to connect your local Git repository with a GitHub repository:</p>
+            <ol>
+                <li>On the GitHub website (https://github.com/), create a new repository without initializing it with a README.</li>
+                <li>Copy the repository URL from GitHub.</li>
+                <li>Back in your terminal, navigate to your project folder.</li>
+                <li>Run the following commands:</li>
+            </ol>
+            
+            <pre>
+            <code>
+            # Initialize a new Git repository in your project folder
+            git init
+            
+            # Stage the file for commit
+            git add .
+            
+            # Commit the changes
+            git commit -m "Initial commit"
+            
+            # Set the remote repository URL (replace [repository-url] with the copied URL from your GitHub)
+            git remote add origin [repository-url]
+            
+            # Set the default branch name to 'main'
+            git branch -M main
+            
+            # Push your local commits to GitHub
+            git push -u origin main
+            </code>
+            </pre>
+            
+            <p>Now your local Git repository is connected to the GitHub repository, and you've pushed your initial commit to GitHub. You can continue making changes to your code, staging, committing, and pushing those changes to GitHub using the familiar Git commands.</p>
+            
+        
+            <h3>Task for Submission</h3>
+            <p>Your task is to follow the steps outlined in this lecture, take a screenshot of your terminal showing the Git commands you executed, and another screenshot of your GitHub repository. Save the images as "git_intro_terminal.jpg" and "git_intro_github.jpg" respectively, and submit them for assessment.</p>
+        
+            <!-- <form id="screenshot-form" enctype="multipart/form-data"> -->
+                <input type="file" id="screenshot" name="screenshot" />
+                <button id="submit-button">Submit Screenshot</button>
+            <!-- </form> -->
+                       
+        </section>
+        
+        <section class="result">
+            <h2>Result</h2>
+            <p>Your screenshot will be assessed, and you'll receive feedback on your Git setup.</p>
+        </section>
+    </main>
+    
+    <!-- <script>
+        document.getElementById("submit-button").addEventListener("click", async () => {
+            const screenshotInput = document.getElementById("screenshot");
+    
+            // Check if a file has been selected
+            if (screenshotInput.files.length === 0) {
+                alert("Please select a screenshot to submit.");
+                return;
+            }
+    
+            // Upload the selected screenshot (you can implement the upload logic here)
+            const screenshotFile = screenshotInput.files[0];
+    
+            // Read the selected screenshot as a base64 encoded string
+            const reader = new FileReader();
+            reader.onload = async (event) => {
+                const screenshotData = event.target.result;
+    
+                // Get the lecture name (you may need to retrieve it from the page)
+                const lectureName = "Introduction to PYTHON"; // Change the lecture name
+    
+                // Send the screenshot data to the server for processing
+                const screenshotResponse = await fetch('http://localhost:8080/api/submit-lecture-screenshot', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ screenshot: screenshotData, lectureName }),
+                });
+    
+                if (screenshotResponse.ok) {
+                    // Screenshot submitted successfully
+                    console.log('Lecture screenshot submitted successfully');
+    
+                    // Redirect to the dashboard page or handle success as needed
+                    // window.location.href = '/client/index.html'; // Replace with your actual dashboard page URL
+                } else {
+                    // Handle errors if submission fails
+                    console.error('Failed to submit lecture screenshot');
+                }
+            };
+    
+            // Read the screenshot file as a base64 string
+            reader.readAsDataURL(screenshotFile);
+        });
+    </script> -->
+    
+    <script>
+
+                // Add a click event for the submit button (you can implement submission logic here)
+                document.getElementById("submit-button").addEventListener("click", function () {
+            // Implement submission logic here
+            alert("Submission successful! Please wait to be redirected to Dashboard..");
+        });
+
+    </script>
+    
+</body>
+</html>
+
