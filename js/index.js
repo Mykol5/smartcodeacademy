@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
       if (!token) {
         // If the token is not available, redirect to the login page
-        window.location.href = '/login.html'; // Replace with your login page URL
+        window.location.href = '/loading.html'; // Replace with your login page URL
         return;
       }
   
